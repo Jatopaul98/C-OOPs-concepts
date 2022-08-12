@@ -20,9 +20,9 @@ class family
 {
     static void Main(string[] args)
     {
-        Son s = new Son();
-        s.dad();
-        s.who();
+        Son son = new Son(); //should write some meaning fully object name 
+        son.dad();
+        son.who();
     }
 }
 
@@ -64,8 +64,7 @@ namespace RectangleApplication
 
 //Inheritance //hierarchical 
 using System;
-namespace System
-{
+
     public class father
     {
         public string fathername()
@@ -101,7 +100,7 @@ namespace System
             Console.WriteLine("My name is :" + second.secondname() + Environment.NewLine + "My father is :" + first.fathername());
         }
     }
-}
+
 
 //Inheritance //multilevel inheritance
 using System;      
@@ -141,39 +140,38 @@ namespace Demo
     }
 }
 //Inheritance//multiple inhertance
-using System;  
-public interface Drawable
+
+// compile time //Poymorphism //methodoverloading  
+using Systemusing System;
+interface IFirstInterface
 {
-    void draw();
+    void first();
 }
-class Rectangle : Drawable
+interface ISecondInterface
 {
-    public void draw()
+    void second();
+}
+class Demo : IFirstInterface, ISecondInterface
+{
+    public void first()
     {
-        Console.WriteLine("drawing rectangle...");
+        Console.Write("Jato ");
     }
-}
-class Circle : Drawable
-{
-    public void draw()
+    public void second()
     {
-        Console.WriteLine("drawing circle...");
+        Console.WriteLine("paul");
     }
 }
 class TestInterface
 {
     static void Main(string[] args)
     {
-        Drawable d;
-        d = new Rectangle();
-        d.draw();
-        d = new Circle();
-        d.draw();
+        Demo name = new Demo();
+        name.first();
+        name.second();
     }
 }  
-
-// compile time //Poymorphism //methodoverloading  
-using System;			            /*using System using this we can comment */
+/*using System using this we can comment */
 class methodoverloading
 {
     // adding two integer values. 
